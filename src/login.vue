@@ -1,8 +1,15 @@
 <template>
-    <div class="compteConnexion">
-        <div id="titre">Se Connecter</div>
+    <div class="login">
+        <div>
+        <NavCLL />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
         <b-form @submit="onSubmit" @reset="onReset">
-      <br>
+        <br>
+            <br>
         <label for="email" id="input1">Email</label>
         <b-form-input
           id="email"
@@ -29,19 +36,27 @@
                 <div class="col-2"></div>
                 <div class="col-5"><router-link to="/PasswordOubliee" title="Mot de passe oublié" id="mot">Mot de passe oublié ?</router-link></div>
             </div>
-            <br>
-        <b-button block type="submit" id="btn"><b-icon iscale="1.25" icon="envelope-fill"></b-icon> SE CONNECTER</b-button>
-        <br>
-        <b-button block type="submit" id="btnfacebook" ><a href="#" class="fa fa-facebook"></a> CRÉER VOTRE COMPTE AVEC FACEBOOK</b-button>
+        <b-button block type="submit" id="btn"><b-icon iscale="1.25" icon="envelope-fill"></b-icon> CRÉER VOTRE COMPTE</b-button>
+        <hr>
+        <b-button block type="submit" id="btnfacebook" ><a href="#" id="fa fa-google"></a> CRÉER VOTRE COMPTE AVEC Google</b-button>
     </b-form>
-        <br><br><br><br>
+      <br><br><br>
+      </div>
+      <div class="col-3"></div>
+      </div>
+
+      </div>
     </div>
 </template>
 <script>
+import NavCLL from './components/NavCLL.vue'
 
 export default {
-  name: 'compteConnexion',
-  data() {
+  name: 'createAccounts',
+   components: {
+     NavCLL
+   },
+   data() {
       return {
         form: {
           email: '',
@@ -60,63 +75,62 @@ methods: {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#titre
-{
-    margin-top: 20px;
-    color: darksalmon;
-    font-size: 25px;
-}
-
 #input1
 {
-    margin-left: -395px;
+    margin-left: -490px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #input2
 {
-    margin-left: -365px;
+    margin-left: -460px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
-
+#mot
+{
+    color: #008081;
+}
 #btn
 {
-    background-color: darksalmon;
-    border-color: darksalmon;
+    color: white ;
+    background-color: #008081;
     font-size: 15px;
     height: 50px;
+    /*font-family: "Gill Sans", sans-serif;*/
      font-family: Comic Sans MS;
 }
 #lien
 {
-    color: darksalmon;
+    color: #008081;
     font-size: 12px;
 }
 #btnfacebook
 {
-    background-color: #3b5998;
-    border-color: #3b5998;
+    background: #dd4b39;
     font-size: 13px;
     height: 50px;
     font-family: Comic Sans MS;
 }    
 .fa {
-  padding: 8px;
-  font-size: 15px;
-  width: 8px;
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
 }
-.fa-facebook {
+.fa-google {
+  /*background: #dd4b39;*/
   color: white;
 }
-#mot
+#sign
 {
-    color: darksalmon;
+  color: rgb(71, 70, 70);
+  text-decoration: none;
 }
+
 </style>

@@ -1,8 +1,15 @@
 <template>
-    <div class="Compte">
-    <b-form @submit="onSubmit" @reset="onReset">
+    <div class="createAccounts">
+      <div>
+        <NavCLL />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
+        <b-form @submit="onSubmit" @reset="onReset">
         <br>
-        <label for="prénom" id="input1">Prénom</label>
+        <label for="prénom" id="input1" variant="info" >Prénom</label>
         <b-form-input
            id="prénom"
            v-model="form.firstname"
@@ -46,24 +53,29 @@
             required
             ></b-form-input>
             <br>
-            <div>
-                <b-form-checkbox v-model="form.check" size="sm">Je souhaite recevoir la newsletter de MRS. BAY avec les meilleures offres du jour.</b-form-checkbox>
-            </div>
-            <br>
         <b-button block type="submit" id="btn"><b-icon iscale="1.25" icon="envelope-fill"></b-icon> CRÉER VOTRE COMPTE</b-button>
         <hr>
-        <b-button block type="submit" id="btnfacebook" ><a href="#" class="fa fa-facebook"></a> CRÉER VOTRE COMPTE AVEC FACEBOOK</b-button>
+        <b-button block type="submit" id="btnfacebook" ><a href="#" id="fa fa-google"></a> CRÉER VOTRE COMPTE AVEC Google</b-button>
     </b-form>
     <br><br>
         <p>Vous possédez déjà un compte ?<br><router-link to="/Connexion" title="Connectez-vous à votre compte client" id="lien">CONNECTEZ-VOUS </router-link></p>
       <br><br><br>
       </div>
-        
+      <div class="col-3"></div>
+      </div>
+
+      </div>
+    </div>
 </template>
 <script>
+import NavCLL from './components/NavCLL.vue'
+
 export default {
-  name: 'Compte',
-  data() {
+  name: 'createAccounts',
+   components: {
+     NavCLL
+   },
+   data() {
       return {
         form: {
           firstname: '',
@@ -91,40 +103,40 @@ methods: {
     margin-left: -470px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #input2
 {
     margin-left: -490px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #input3
 {
     margin-left: -485px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #input4
 {
     margin-left: -455px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #input5
 {
     margin-left: -405px;
     margin-bottom: -10px;
     font-size: 15px;
-    color: darksalmon;
+    color: #008081;
 }
 #btn
 {
-    background-color: darksalmon;
-    border-color: darksalmon;
+    color: white ;
+    background-color: #008081;
     font-size: 15px;
     height: 50px;
     /*font-family: "Gill Sans", sans-serif;*/
@@ -132,28 +144,27 @@ methods: {
 }
 #lien
 {
-    color: darksalmon;
+    color: #008081;
     font-size: 12px;
 }
 #btnfacebook
 {
-    background-color: #3b5998;
-    border-color: #3b5998;
+    background: #dd4b39;
     font-size: 13px;
     height: 50px;
     font-family: Comic Sans MS;
 }    
 .fa {
-  padding: 8px;
-  font-size: 15px;
-  width: 8px;
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
 }
-.fa-facebook {
-  /*background: #3B5998;*/
+.fa-google {
+  /*background: #dd4b39;*/
   color: white;
 }
 </style>

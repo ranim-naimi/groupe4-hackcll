@@ -31,20 +31,26 @@ import { store } from './store'
 
 //router
 //import routes from './router/index.js'
+
 import VueRouter from 'vue-router'
-import Acceuil from './Acceuil.vue'
-import CreerCompte from './CreerCompte.vue'
-import Connexion from './Connexion.vue'
-import PasswordOubliee from './PasswordOubliee.vue'
-import Aide from './Aide.vue'
+import CreateAccounts from './CreateAccounts.vue'
+import login from './login.vue'
+import Contacts from './Contacts'
+import HomeCLL from './HomeCLL'
+import Abouts from './Abouts'
+import Gestion from './Gestion'
+
 
 Vue.use(VueRouter)
+
 const routes = [
-  { path: '/', component: Acceuil },
-  { path: '/CreerCompte', component: CreerCompte },
-  { path: '/Connexion', component: Connexion },
-  { path: '/PasswordOubliee', component: PasswordOubliee },
-  { path: '/Aide', component: Aide }
+  { path: '/', component: HomeCLL },
+  { path: '/CreateAccounts', component: CreateAccounts },
+  { path: '/login', component: login },
+  { path: '/Contacts', component: Contacts },
+  { path: '/Abouts', component: Abouts },
+  { path: '/Gestion', component: Gestion }
+
 ]
 
 const router = new VueRouter({

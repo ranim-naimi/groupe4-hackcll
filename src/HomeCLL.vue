@@ -1,6 +1,13 @@
 <template>
-    <div class="carousel">
-        <b-carousel
+    <div class="bg-light">
+    <div class="HomeCLL">
+        <div>
+        <NavCLL />
+      </div>
+      <br>
+      <div class="container">
+          <div class="row">
+            <b-carousel
         id="carousel-1"
         v-model="slide"
         :interval="4000"
@@ -15,36 +22,44 @@
             </div>
         </div>
         </b-carousel>
-        
+          </div>
+          
+      </div>
+      <br>
+    </div>
+    
     </div>
 </template>
-    
 <script>
+import NavCLL from './components/NavCLL.vue'
 export default {
-  name: 'carousel',
+  name: 'HomeCLL',
+  components: {
+     NavCLL
+   },
   data: () => {
     return {
       imgCarousel: [
-      'https://i.ibb.co/2tgq5GJ/car4.gif',
-      'https://i.ibb.co/4dkGczh/car5.png',
-      'https://i.ibb.co/GMjxNKZ/car3.jpg',
-      'https://i.ibb.co/Kj86q9t/car2.jpg'
+      'https://i.ibb.co/x81zy3D/photo.jpg',
+      'https://i.ibb.co/zGfyt8B/photo2.jpg',
+      'https://i.ibb.co/QJNK89V/photo3.jpg'
     ]
     }
-  }  
+  }
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #carousel-1
 {
     width: 1124px;
-    height: 400px;
+    height: 500px;
 }
 #img
 {
     width: 1124px;
-    height: 400px;
+    height: 500px;
 }
 </style>
